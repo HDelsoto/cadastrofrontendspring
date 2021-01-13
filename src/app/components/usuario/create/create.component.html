@@ -1,0 +1,54 @@
+
+<mat-card>
+    <mat-card-title> Cadastro Usuário</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="E-mail" [(ngModel)]="usuario.email" name="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="nome">            
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="usuario.cpf" name="cpf" mask="CPF_CNPJ">
+        </mat-form-field>        
+        <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="usuario.telefone" name="telefone" data-mask="(00) 00000-0000">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Função</mat-label>
+            <select matNativeControl required placeholder="Função" [(ngModel)]="usuario.funcao" name="funcao">
+              <option value="estagiario">Estagiário</option>
+              <option value="analista">Analista</option>
+              <option value="coordenador">Coordenador</option>
+              <option value="gerente">Gerente</option>
+            </select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Perfil</mat-label>
+            <select matNativeControl required placeholder="Perfil" [(ngModel)]="usuario.perfil" name="perfil">
+              <option value="Gestor Municipal">Gestor Municipal</option>
+              <option value="Gestor Estadual">Gestor Estadual</option>
+              <option value="Gestor Nacional">Gestor Nacional</option>              
+            </select>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Situação</mat-label>
+            <select matNativeControl required placeholder="Situação" [(ngModel)]="usuario.situacao" name="situacao">
+              <option value="true">Ativo</option>
+              <option value="false">Inativo</option>                       
+            </select>
+          </mat-form-field>
+          <label>Telefone</label>
+        
+    </form>
+    <button mat-raised-button (click)="createUsuario()" color="primary" name="bnome">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()" >
+        Cancelar
+    </button>
+</mat-card>
+
